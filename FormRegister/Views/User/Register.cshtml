@@ -1,0 +1,68 @@
+﻿@model FormRegister.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@if (Model.RegistrationError)
+{
+    <h3>Fel i registrering...rätta och skicka in igen</h3>
+}
+@if (Model.Saved)
+{
+    <h3>Tack för din registrering</h3>
+}
+else
+{
+    using (Html.BeginForm(FormMethod.Post))
+    {
+        <table class="table">
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+
+            <tr>
+                <td>Förnamn</td>
+                <td>@Html.TextBoxFor(m=>m.Forname)
+                @Html.ValidationMessageFor(m=>m.Forname)
+                </td>
+            </tr>
+            <tr>
+                <td>Efternamn</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Lastname)
+
+                                @Html.ValidationMessageFor(m => m.Lastname)
+                            </td>
+            </tr>
+            <tr>
+                <td>Login namn</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Loginname)
+                    @Html.ValidationMessageFor(m => m.Loginname)
+                            </td>
+            </tr>
+            <tr>
+                <td>Pinkod</td>
+                <td>
+                    @Html.TextBoxFor(m => m.Pincode)
+                                @Html.ValidationMessageFor(m => m.Pincode)
+                            </td>
+            </tr>
+            <tr>
+                <td>Landskod</td>
+                <td>
+                    @Html.TextBoxFor(m => m.CountryCode)
+                    @Html.ValidationMessageFor(m => m.CountryCode)
+                            </td>
+            </tr>
+
+        </table>
+
+        <input type="submit" value="Spara" />
+
+    }
+
+}
