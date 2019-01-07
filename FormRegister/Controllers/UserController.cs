@@ -12,6 +12,7 @@ namespace FormRegister.Controllers
         public ActionResult Register()
         {
             var model = new ViewModels.RegisterViewModel();
+            model.MedlemsDatum = DateTime.Now;
             return View(model);
         }
 

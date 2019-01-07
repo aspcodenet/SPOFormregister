@@ -21,6 +21,9 @@ namespace FormRegister.ViewModels
         [MinLength(4)]
         public string Loginname { get; set; }
 
+        [DataType(DataType.Date)]
+        public DateTime MedlemsDatum { get; set; }
+
         [Range(1000,9999)]
         public int Pincode { get; set; }
         public string CountryCode { get; set; }
