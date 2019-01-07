@@ -57,12 +57,22 @@ else
 
 
         <tr>
-            <td>Medlemspicker</td>
+            <td>Medlem från</td>
             <td>
-                @Html.EditorFor(m=>m.MedlemsDatum)
+                @Html.EditorFor(m => m.MedlemsDatum)
                 @Html.ValidationMessageFor(m => m.MedlemsDatum)
             </td>
         </tr>
+
+        <tr>
+            <td>Datum</td>
+            <td>
+                @Html.TextBoxFor(m => m.PersonNummer)
+                @Html.ValidationMessageFor(m => m.PersonNummer)
+            </td>
+        </tr>
+
+
 
 
         <tr>

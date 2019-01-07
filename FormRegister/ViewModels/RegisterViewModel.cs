@@ -24,6 +24,9 @@ namespace FormRegister.ViewModels
         [DataType(DataType.Date)]
         public DateTime MedlemsDatum { get; set; }
 
+        [RegularExpression(@"^(\d{6}|\d{8})[-|(\s)]{0,1}\d{4}$",ErrorMessage ="Felaktigt personnummer")]
+        public string PersonNummer { get; set; } 
+ 
         [Range(1000,9999)]
         public int Pincode { get; set; }
         public string CountryCode { get; set; }
